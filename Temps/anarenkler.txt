@@ -1,0 +1,4 @@
+kırmızımsı : #fa6058
+grimsi : #a8a8a8
+sarımsı : #fabf4d
+yazi_renk : #202020
