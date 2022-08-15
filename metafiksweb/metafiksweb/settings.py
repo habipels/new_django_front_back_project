@@ -37,6 +37,7 @@ INSTALLED_APPS = ["anasayfa","egitimler",
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor','ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -48,8 +49,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
 ROOT_URLCONF = 'metafiksweb.urls'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
+
 
 TEMPLATES = [
     {
@@ -73,12 +81,6 @@ WSGI_APPLICATION = 'metafiksweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
@@ -99,22 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-####################################
-    ##  CKEDITOR CONFIGURATION ##
-####################################
 
-CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
-
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_IMAGE_BACKEND = "pillow"
-
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': None,
-    },
-}
-
-###################################
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -135,7 +122,20 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
+CKEDITOR_CONFIGS = {
+    "default": {
+        "removePlugins": "stylesheetparser",
+        "allowedContent" : True,
+        "width" : "100%",
+    }
+}
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

@@ -47,3 +47,7 @@ class egitimler(models.Model):
     urun_sertifikalar=RichTextUploadingField()
     def __str__(self):
         return self.isim
+
+class kurlar(models.Model):
+    kur_Adi = models.CharField(max_length= 100)
+    kur_tarihi = models.DateTimeField()
