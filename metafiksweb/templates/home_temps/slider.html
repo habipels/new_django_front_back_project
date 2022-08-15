@@ -1,0 +1,39 @@
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#header-carousel" data-slide-to="1"></li>
+                <li data-target="#header-carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+            {% for i in ban %}
+            
+                {% if i.sayfa_sirasi == 0 %}
+                    <div class="carousel-item active" style="min-height: 300px;">
+                    <img class="position-relative w-100" src="{{i.baner_resim}}" style="min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 100%; max-width: 900px;">
+                            
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                    <div class="carousel-item" style="min-height: 300px;">
+                    <img class="position-relative w-100" src="{{i.baner_resim}}" style="min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 90%; max-width: 900px;">
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+            {% endfor %}
+             
+              
+                
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
