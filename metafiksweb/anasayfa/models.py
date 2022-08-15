@@ -8,3 +8,6 @@ class numara(models.Model):
     sirket_numarasi = models.CharField(max_length=11)
 class adres(models.Model):
     sirket_adresi = models.CharField(max_length=200)
+
+class email_adres(models.Model):
+    sirket_email_adresi = models.EmailField(max_length=200)
