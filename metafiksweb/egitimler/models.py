@@ -20,7 +20,7 @@ class egitimler(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
-
+    kapak_image=models.ImageField(upload_to='images/',null=True)
     category = models.ForeignKey(kategoriler, on_delete=models.CASCADE)
     isim = models.CharField(max_length=150)
     link = models.CharField(max_length=100 , null="True")
