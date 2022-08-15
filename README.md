@@ -1,1 +1,0 @@
-# new_django_front_back_project
