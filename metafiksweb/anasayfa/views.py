@@ -13,10 +13,11 @@ linkdin = sosyalmedyalinkd.objects.last()
 egitimleri = egitimler.objects.all()
 # Create your views here.
 def anasayfa(request):
+    kurlarrim = kurlar.objects.all()
     ban = banner.objects.all()[:3]
     content = {"adresler":adresler,"email_adresi":email_adresi,
     "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
-    "twit":twit,"linkdin":linkdin,"ban":ban,"egitimleri":egitimleri}
+    "twit":twit,"linkdin":linkdin,"ban":ban,"egitimleri":egitimleri,"kurlarrim":kurlarrim}
 
     return render(request,"home_temps/index.html",content)
 
