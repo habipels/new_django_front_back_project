@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(kategoriler)
 admin.site.register(egitimler)
 admin.site.register(kurlar)
+admin.site.register(kurlar_secimi)

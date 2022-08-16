@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from egitimler.models import egitimler
+from egitimler.models import *
 from .models import *
 adresler = adres.objects.last()
 email_adresi =email_adres.objects.last()
@@ -21,9 +21,18 @@ def anasayfa(request):
     return render(request,"home_temps/index.html",content)
 
 def egitimler(request):
-
+    kurlarrim = kurlar.objects.all()
     content = {"adresler":adresler,"email_adresi":email_adresi,
     "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
-    "twit":twit,"linkdin":linkdin,"egitimleri":egitimleri}
+    "twit":twit,"linkdin":linkdin,"egitimleri":egitimleri,"kurlarrim":kurlarrim}
+
+    return render(request,"egitimler_temps/index.html",content)
+
+def egitimler_secimi(request,id):
+    kurlarrim = kurlar.objects.all()
+    kur = kurlar_secimi.objects.filter(kur_Adi = id).order_by("egitim_tarihi")
+    content = {"adresler":adresler,"email_adresi":email_adresi,
+    "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
+    "twit":twit,"linkdin":linkdin,"egitimleri":egitimleri,"kurlarrim":kurlarrim,"kur":kur}
 
     return render(request,"egitimler_temps/index.html",content)

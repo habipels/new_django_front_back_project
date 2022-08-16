@@ -1,0 +1,57 @@
+    <!-- Category Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Olan Eğitimler</h5>
+                <h1>Eğitim Başlıkları</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="jumbotron">
+                    {% for i in kurlarrim %}
+                        {% if i.id in  kur.ders_Adi %}
+                            <a class="" style="color: black !important ;" href="/egitimler/{{i.id}}" >{{i.kur_Adi}}</a>
+                        {% else %}
+                            <a class="" href="/egitimler/{{i.id}}" >{{i.kur_Adi}}</a>
+                        {% endif %}
+                        
+                        {% endfor %}
+                      </div>
+                </div>
+                <div class="col-lg-9">
+            <div class="row">
+            {% if kur %}
+                {% for i in kur %}
+            
+           
+                <div class="col-lg-4 col-md-6 mb-4" style="box-sizing: border-box;">
+                    <div style="box-sizing: border-box;" class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" width="400" src="{{i.ders.kapak_image.url}}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="egitimler/{{i.isim}}/">
+                            <h4 class="text-white font-weight-medium">{{i.ders.isim}}</h4>
+                            <span>{{i.egitim_tarihi}}</span>
+                        </a>
+                    </div>
+                </div>
+                 {% endfor %}
+            {% else %}
+            
+            {% for i in egitimleri %}
+            
+           
+                <div class="col-lg-4 col-md-6 mb-4" style="box-sizing: border-box;">
+                    <div style="box-sizing: border-box;" class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" width="400" src="{{i.kapak_image.url}}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="egitimler/{{i.isim}}/">
+                            <h4 class="text-white font-weight-medium">{{i.isim}}</h4>
+                            <span>{{i.aciklama_kart1}}i</span>
+                        </a>
+                    </div>
+                </div>
+                 {% endfor %}
+                {% endif %}
+            </div></div>
+        </div>
+        </div>
+    </div>
+    <!-- Category Start -->

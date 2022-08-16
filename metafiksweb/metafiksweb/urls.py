@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',anasayfa.anasayfa,name="index"),
     path('egitimler/',anasayfa.egitimler,name="egitimler"),
+    path("egitimler/<int:id>",anasayfa.egitimler_secimi,name="egitim"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
