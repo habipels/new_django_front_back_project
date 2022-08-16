@@ -19,3 +19,11 @@ def anasayfa(request):
     "twit":twit,"linkdin":linkdin,"ban":ban,"egitimleri":egitimleri}
 
     return render(request,"home_temps/index.html",content)
+
+def anasayfa(request):
+
+    content = {"adresler":adresler,"email_adresi":email_adresi,
+    "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
+    "twit":twit,"linkdin":linkdin,"egitimleri":egitimleri}
+
+    return render(request,"egitimler_temps/index.html",content)
