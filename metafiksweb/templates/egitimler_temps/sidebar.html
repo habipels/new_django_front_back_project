@@ -9,12 +9,8 @@
                 <div class="col-lg-3">
                     <div class="jumbotron">
                     {% for i in kurlarrim %}
-                        {% if i.id in  kur.ders_Adi %}
-                            <a class="" style="color: black !important ;" href="/egitimler/{{i.id}}" >{{i.kur_Adi}}</a>
-                        {% else %}
-                            <a class="" href="/egitimler/{{i.id}}" >{{i.kur_Adi}}</a>
-                        {% endif %}
-                        
+                    
+                        <a class="" href="/egitimler/{{i.id}}" >{{i.kur_Adi}}</a>
                         {% endfor %}
                       </div>
                 </div>
