@@ -20,7 +20,7 @@ def anasayfa(request):
 
     return render(request,"home_temps/index.html",content)
 
-def anasayfa(request):
+def egitimler(request):
 
     content = {"adresler":adresler,"email_adresi":email_adresi,
     "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
