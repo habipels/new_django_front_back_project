@@ -56,3 +56,6 @@ class kurlar_secimi(models.Model):
     kur_Adi = models.ForeignKey(kurlar, on_delete=models.CASCADE)
     ders = models.ForeignKey(egitimler, on_delete=models.CASCADE)
     egitim_tarihi=models.DateTimeField()
+
+class hakkimizda_sayfasi(models.Model):
+    Hakkimizda_aciklama=RichTextField()

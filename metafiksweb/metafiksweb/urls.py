@@ -22,6 +22,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
     path('',anasayfa.anasayfa,name="index"),
+    path('hakkimizda/',anasayfa.hakkimizda_sayfasi,name="hakkimizda"),
     path('egitimler/',anasayfa.egitimler,name="egitimler"),
     path("egitimler/<int:id>",anasayfa.egitimler_secimi,name="egitim"),
 ]
