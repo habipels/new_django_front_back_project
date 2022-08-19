@@ -41,8 +41,18 @@ def egitimler_secimi(request,id):
 def hakkimizda(request):
     kurlarrim = kurlar.objects.all()
     ban = banner.objects.all()[:3]
+    hakimda = hakkimizda_sayfasi.objects.last()
+    content = {"adresler":adresler,"email_adresi":email_adresi,
+    "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
+    "twit":twit,"linkdin":linkdin,"ban":ban,"egitimleri":egitimleri,"kurlarrim":kurlarrim,"hakimda":hakimda}
+
+    return render(request,"hakkimizda_temps/index.html",content)
+
+def iletisim(request):
+    kurlarrim = kurlar.objects.all()
+    ban = banner.objects.all()[:3]
     content = {"adresler":adresler,"email_adresi":email_adresi,
     "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
     "twit":twit,"linkdin":linkdin,"ban":ban,"egitimleri":egitimleri,"kurlarrim":kurlarrim}
 
-    return render(request,"hakkimizda_temps/index.html",content)
+    return render(request,"iletisim_temps/index.html",content)

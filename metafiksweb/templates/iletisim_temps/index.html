@@ -20,41 +20,21 @@
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
                             <a href="/" class="nav-item nav-link ">Ana Sayfa</a>
-                            <a href="/egitimler/" class="nav-item nav-link active">Eğitimlerimiz</a>
+                            <a href="/egitimler/" class="nav-item nav-link">Eğitimlerimiz</a>
                             <a href="/hakkimizda/" class="nav-item nav-link">Hakkımızda</a>
                             
-                            <a href="contact.html" class="nav-item nav-link">İletişim</a>
+                            <a href="contact.html" class="nav-item nav-link active">İletişim</a>
                            
                         </div>
                         
                     </div>
                 </nav>
             </div>
-            <div class="col-lg-3">
-             
-            </div>
+            
         </div>
     </div>
     <!-- Navbar End -->
-    <!-- Header Start -->
-    <div class="container-fluid page-header" style="margin-bottom: 90px;">
-        <div class="container">
-            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
-                <h3 class="display-4 text-white text-uppercase">Eğitimler</h3>
-                <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="/">Ana Sayfa</a></p>
-                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Eğitimler</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
 {% endblock header %}
-
-        {% block sidebar %}
-    {% include "egitimler_temps/sidebar.html" %}
-    {% endblock sidebar %}

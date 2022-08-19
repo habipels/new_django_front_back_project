@@ -24,7 +24,10 @@
                         <div class="navbar-nav py-0">
                             <a href="/" class="nav-item nav-link ">Ana Sayfa</a>
                             <a href="/egitimler/" class="nav-item nav-link">Eğitimlerimiz</a>
-                            <a href="/hakkimizda/" class="nav-item active">Hakkımızda</a>
+                            <a href="/hakkimizda/" class="nav-item nav-link active">Hakkımızda</a>
+                            
+                            <a href="contact.html" class="nav-item nav-link">İletişim</a>
+                            <!-- 
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                                 <div class="dropdown-menu rounded-0 m-0">
@@ -32,13 +35,14 @@
                                     <a href="single.html" class="dropdown-item">En Son Yüklenen Blog</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">İletişim</a>
                             <a href="course.html" class="nav-item nav-link">Örnek Kodlar</a>
+                            -->
                         </div>
                         
                     </div>
                 </nav>
             </div>
+            <!--
             <div class="col-lg-3">
                 <div class="row mt-2">
                     <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block col-lg-5 " href="">Giriş Yap</a>
@@ -46,7 +50,13 @@
                     <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block col-lg-5" href="">Kayıt OL</a>
                 </div>    
             </div>
+            -->
         </div>
     </div>
     <!-- Navbar End -->
 {% endblock header %}
+{% block slider %}
+<div class="container">
+{{hakimda.Hakkimizda_aciklama|safe}}
+</div>
+{% endblock slider %}
