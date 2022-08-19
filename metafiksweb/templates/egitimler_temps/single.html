@@ -53,7 +53,7 @@
     </div>
     <!-- Navbar End -->
     <!-- Header Start -->
-    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container-fluid page-header" >
         <div class="container">
             <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
                 <h3 class="display-4 text-white text-uppercase">Eğitimler</h3>
@@ -78,33 +78,20 @@
                 {% for i in egitim %}
                 
                
-                    <div class="mb-5">
+                    <div class="mb-3">
                         <h6 class="text-primary mb-3"></h6>
                         <h1 class="mb-5">{{i.isim}}</h1>
-                        <img class="img-fluid rounded w-50 mb-4"  src="{{i.image.url}}" alt="{{i.isim}}">
                             {{i.urun_aciklama|safe}}
-                        <h2 class="mb-4">Est dolor lorem et ea</h2>
-                        <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="img/blog-1.jpg" alt="Image">
-                        <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
-                            est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet
-                            sed rebum eos. Clita no magna no dolor erat diam tempor rebum consetetur, sanctus labore sed
-                            nonumy diam lorem amet eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
-                            sadipscing gubergren erat. Gubergren at lorem invidunt sadipscing rebum sit amet ut ut,
-                            voluptua diam dolores at sadipscing stet. Clita dolor amet dolor ipsum vero ea ea eos.
-                            Invidunt sed diam dolores takimata dolor dolore dolore sit. Sit ipsum erat amet lorem et,
-                            magna sea at sed et eos. Accusam eirmod kasd lorem clita sanctus ut consetetur et. Et duo
-                            tempor sea kasd clita ipsum et. Takimata kasd diam justo est eos erat aliquyam et ut. Ea sed
-                            sadipscing no justo et eos labore, gubergren ipsum magna dolor lorem dolore, elitr aliquyam
-                            takimata sea kasd dolores diam, amet et est accusam labore eirmod vero et voluptua. Amet
-                            labore clita duo et no. Rebum voluptua magna eos magna, justo gubergren labore sit.</p>
-                        <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
-                            est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet
-                            sed rebum eos. Clita no magna no dolor erat diam tempor rebum consetetur, sanctus labore sed
-                            nonumy diam lorem amet eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
-                            sadipscing gubergren erat.</p>
+                        
                     </div>
 
-                    
+                    <div class="">
+                        
+                        <a href="{{i.odeme_linki}}" class="btn-primary btn">Satın Al</a>
+                        <a href="tel:+9{{numara.sirket_numarasi}}" class="btn-primary btn">
+                         Danışmana Sor </a>
+                        
+                    </div>
                  {% endfor %}
                 </div>
 
@@ -113,4 +100,88 @@
         </div>
     </div>
     <!-- Detail End -->
+    <style>
+        body {font-family: Arial;}
+        
+        /* Style the tab */
+        .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+        }
+        
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+        }
+        
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #ddd;
+        }
+        
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+        
+        /* Style the tab content */
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+        </style>
+<div class="container">
+    {% for i in egitim %}
+                
+               
+
+    
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">Eğitim Müfredatı</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Ücret Bilgisi</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Sertifika Bilgileri</button>
+  </div>
+  
+  <div id="London" class="tabcontent">
+    <h3>Eğitim Müfredatı</h3>
+    <p>{{i.urun_mufredat|safe}}</p>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <h3>Ücret Bilgisi</h3>
+    <p>{{i.urun_tarih_ucret|safe}}</p> 
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <h3>Sertifika Bilgileri</h3>
+    <p>{{i.urun_sertifikalar|safe}}</p>
+  </div>
+  {% endfor %}
+  <script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  </script>
+</div>
 {% endblock sidebar %}

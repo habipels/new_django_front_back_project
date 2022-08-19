@@ -37,7 +37,7 @@ def egitimler_secimi(request,id):
     "twit":twit,"linkdin":linkdin,"egitimleri":egitimleri,"kurlarrim":kurlarrim,"kur":kur}
 
     return render(request,"egitimler_temps/index.html",content)
-def tekli_secimi(request,id):
+def tekli_secimi(request,id,slug):
     kurlarrim = kurlar.objects.all()
     kur = kurlar_secimi.objects.filter(kur_Adi = id).order_by("egitim_tarihi")
     egitim = egit.objects.filter(id = id)
