@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor_uploader.fields import  RichTextUploadingField
+from ckeditor.fields import RichTextField
 class kategoriler(models.Model):
     isim = models.CharField(max_length=50)
     link = models.CharField(max_length=100 , null="True")
@@ -35,16 +35,16 @@ class egitimler(models.Model):
     image=models.ImageField(upload_to='images/',null=False)
     fiyat = models.DecimalField(max_digits=12, decimal_places=2,default=0)
     kontejan=models.IntegerField(default=0)
-    urun_sag_metin=RichTextUploadingField()
+    urun_sag_metin=RichTextField()
     Durum=models.CharField(max_length=10,choices=STATUS)
     create_at=models.DateTimeField(auto_now_add=True)
     toplam_egitim_saati =models.CharField(max_length=50)
     egitim_tarihi=models.DateTimeField()
     egitim_bitis_tarihi = models.DateTimeField()
-    urun_aciklama=RichTextUploadingField()
-    urun_mufredat=RichTextUploadingField()
-    urun_tarih_ucret=RichTextUploadingField()
-    urun_sertifikalar=RichTextUploadingField()
+    urun_aciklama=RichTextField()
+    urun_mufredat=RichTextField()
+    urun_tarih_ucret=RichTextField()
+    urun_sertifikalar=RichTextField()
     def __str__(self):
         return self.isim
 
