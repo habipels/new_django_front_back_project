@@ -59,3 +59,6 @@ class kurlar_secimi(models.Model):
 
 class hakkimizda_sayfasi(models.Model):
     Hakkimizda_aciklama=RichTextField()
+
+class iletisim_kanali(models.Model):
+    iletisim_kanalimiz=RichTextField()

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from egitimler.models import egitimler as egit
 from egitimler.models import *
 from .models import *
 adresler = adres.objects.last()
@@ -37,7 +37,15 @@ def egitimler_secimi(request,id):
     "twit":twit,"linkdin":linkdin,"egitimleri":egitimleri,"kurlarrim":kurlarrim,"kur":kur}
 
     return render(request,"egitimler_temps/index.html",content)
+def tekli_secimi(request,id):
+    kurlarrim = kurlar.objects.all()
+    kur = kurlar_secimi.objects.filter(kur_Adi = id).order_by("egitim_tarihi")
+    egitim = egit.objects.filter(id = id)
+    content = {"adresler":adresler,"email_adresi":email_adresi,
+    "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,"egitim":egitim,
+    "twit":twit,"linkdin":linkdin,"egitimleri":egitimleri,"kurlarrim":kurlarrim,"kur":kur}
 
+    return render(request,"egitimler_temps/single.html",content)
 def hakkimizda(request):
     kurlarrim = kurlar.objects.all()
     ban = banner.objects.all()[:3]
@@ -50,7 +58,7 @@ def hakkimizda(request):
 
 def iletisim(request):
     kurlarrim = kurlar.objects.all()
-    ban = banner.objects.all()[:3]
+    ban = iletisim_kanali.objects.last()
     content = {"adresler":adresler,"email_adresi":email_adresi,
     "logo":logo,"numara":numaras,"facebook":facebook,"insta":insta,
     "twit":twit,"linkdin":linkdin,"ban":ban,"egitimleri":egitimleri,"kurlarrim":kurlarrim}
